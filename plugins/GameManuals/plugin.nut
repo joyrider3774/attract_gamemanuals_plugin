@@ -10,9 +10,9 @@
 
 class UserConfig </ help="This plugin provides support for multipage Game Manuals - Created by joyrider - based on Sumatra plugin" />
 {
-  </ label="Path", help="Path to manuals - can include [Name], [Emulator], [Year], [Manufacturer], [System], [DisplayName]", order = 1 />
+    </ label="Path", help="Path to manuals - can include [Name], [Emulator], [Year], [Manufacturer], [System], [DisplayName]", order = 1 />
     path="manuals/[Emulator]";
-  </ label="View Key", help="Key to use to trigger displaying the manuals", options="custom1,custom2,custom3,custom4,custom5,custom6", order =2 />
+    </ label="View Key", help="Key to use to trigger displaying the manuals", options="custom1,custom2,custom3,custom4,custom5,custom6", order =2 />
     key="custom3";
 	</ label="Cancel View Key", help="Key to use to cancel viewing the manuals", options="custom1,custom2,custom3,custom4,custom5,custom6", order =3 />
     cancelkey="custom4"
@@ -99,52 +99,51 @@ class GameManuals
 		return root_filename + ".zxyz";
 	}
 	
-	function on_signal( signal )
-    {
-      if ( signal == config["cancelkey"] ) {
-				_current_page = 1;
-				_swf_visible = false;
-				_swf.file_name = "";
+	function on_signal( signal )  {
+		if ( signal == config["cancelkey"] ) {
+			_current_page = 1;
+			_swf_visible = false;
+			_swf.file_name = "";
+			_swf.visible = _swf_visible;
+			_background.visible = _swf_visible && (config["show_background"] == "Yes");
+			return true;
+		}
+		else
+		if ( signal == config["key"] ) {			
+			local path = get_magic_token_path(config["path"]);
+			local game_name = fe.game_info(Info.Name);
+			local filename_noext = path + format("%s-%06u", game_name, _current_page); 
+			local filename = find_filename_ext(filename_noext);
+			local missing_path = get_magic_token_path(config["missing"]);
+			local missing = missing_path.slice(0, missing_path.len() - 1);
+			local exists = file_exist(filename);
+			if ( (exists == false) && (_current_page == 1)) {
+				_swf_visible = true;
+				_swf.file_name = missing;
 				_swf.visible = _swf_visible;
 				_background.visible = _swf_visible && (config["show_background"] == "Yes");
-				return true;
-			}
-			else
-			if ( signal == config["key"] ) {			
-        local path = get_magic_token_path(config["path"]);
-        local game_name = fe.game_info(Info.Name);
-        local filename_noext = path + format("%s-%06u", game_name, _current_page); 
-				local filename = find_filename_ext(filename_noext);
-        local missing_path = get_magic_token_path(config["missing"]);
-        local missing = missing_path.slice(0, missing_path.len() - 1);
-				local exists = file_exist(filename);
-				if ( (exists == false) && (_current_page == 1)) {
-					_swf_visible = true;
-					_swf.file_name = missing;
+			} else {
+				if (exists == false) {
+					_current_page = 0;
+					_swf.file_name = "";
+					_swf_visible = false;
 					_swf.visible = _swf_visible;
 					_background.visible = _swf_visible && (config["show_background"] == "Yes");
-				} else {
-					if (exists == false) {
-						_current_page = 0;
-						_swf.file_name = "";
-						_swf_visible = false;
+				}  else {
+					if (exists) {
+						_swf_visible = true;
+						_swf.file_name = filename;
 						_swf.visible = _swf_visible;
 						_background.visible = _swf_visible && (config["show_background"] == "Yes");
-					}  else {
-						if (exists) {
-							_swf_visible = true;
-							_swf.file_name = filename;
-							_swf.visible = _swf_visible;
-							_background.visible = _swf_visible && (config["show_background"] == "Yes");
-						}
 					}
 				}
-				_current_page = _current_page + 1;
-				
-                return true;
-				
-            }
-            return false;
+			}
+			_current_page = _current_page + 1;
+			
+			return true;
+			
+		}
+		return false;
     }
 	
 	  //replace specified magic tokens in path - taken from sumatrapdf plugin
@@ -182,8 +181,7 @@ class GameManuals
         return str;
     }
 
-	function onTransition( ttype, var, transition_time )
-	{
+	function onTransition( ttype, var, transition_time ) {
 		// Initialize on StartLayout
 		if ((_initialized == false) && (ttype == Transition.StartLayout)) {
 			return initializeArtwork();
