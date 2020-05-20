@@ -76,7 +76,7 @@ you can name multiple instruction video's in the same format as used for images 
 set your missing image path to `<Path to your manuals>\[Emulator]\missing.png` where `<Path to your manuals>` is your main folder containing the manuals then you can specify in each subfolder (named against the emulator) a `missing.png` picture specific for that emulator or system etc
 
 ### Converting PDF Files
-First grab a copy of pdftopng from [xpdf commandline tools]https://www.xpdfreader.com/download.html you the tools not the xpdf reader and you only need the pdftopng.Exe.
+First grab a copy of pdftopng from [xpdf commandline tools](https://www.xpdfreader.com/download.html) you the tools not the xpdf reader and you only need the pdftopng.Exe.
 
 if your game name is `Sonic II` in the roms list and thus the manual is named `Sonic II.pdf` you need to open a cmd prompt and run `pdftopng "<pdffilename>" "<pdffilename without externsion>"` to convert files to png. So in our example you would execute `pdftopng.exe "Sonic II.pdf" "Sonic II"` this will create png files for each page in the pdf named `Sonic II-000001.png` `Sonic II-000002.png` etc.
 
