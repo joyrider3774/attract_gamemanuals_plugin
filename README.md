@@ -83,3 +83,6 @@ if your game name is `Sonic II` in the roms list and thus the manual is named `S
 I have created and included a simple batch file for windows which you need to place in the root of your manuals directory where all the subfolders will be for the manuals and which contain your pdf files. If you run the batch file it will convert every pdf file automatically for you in the subfolders to png
 
 Afterwards you may also convert your png files to jpg files and erase the pdf and png files. I had good results with using 85% compression quality for the jpg conversion. To give you an idea i had about 20GB of pdf manuals which converted to 80GB of png files. conversion at 95% jpeg compression quality i had 60GB of jpeg files, conversion at 85% jpeg compression i had about 36GB of jpeg files. It's still bigger than the pdf files but still ok as space is no issue for me.
+
+#### Credits
+Plugin is heavily based on code from [SumatraPDF](http://forum.attractmode.org/index.php?topic=1927.0) plugin created by qqplayer
