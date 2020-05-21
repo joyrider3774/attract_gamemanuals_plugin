@@ -9,6 +9,7 @@ Echo converting PDF TO PNG in "%~1"
 echo **********************************************************
 for %%F in ("*.pdf") do (
     echo ---------------------------------
+	echo converting "%%~nF"
 	..\pdftopng.exe "%%F" "%%~nF"
 )
 cd ..
