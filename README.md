@@ -3,6 +3,8 @@ A plugin for attractmode frontend for displaying game manuals, where each page i
 
 ![Screenshot 1](/img/screenshot1.png) ![Screenshot 2](/img/screenshot2.png)
 
+[Latest Release](https://github.com/joyrider3774/attract_gamemanuals_plugin/releases/latest)
+
 ## Installing
 Download the latest release from the [releases tab](https://github.com/joyrider3774/attract_gamemanuals_plugin/releases), extract the files and copy the plugins folder to your attract folder.
 
