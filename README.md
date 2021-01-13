@@ -89,5 +89,5 @@ Afterwards you may also convert your png files to jpg files and erase the pdf an
 #### Credits
 Plugin is heavily based on code from [SumatraPDF](http://forum.attractmode.org/index.php?topic=1927.0) plugin created by qqplayer
 
-### Donations
+#### Donations
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/joyrider3774)
