@@ -5,6 +5,11 @@ A plugin for attractmode frontend for displaying game manuals, where each page i
 
 [Latest Release](https://github.com/joyrider3774/attract_gamemanuals_plugin/releases/latest)
 
+## Buy me a "koffie" if you feel like supporting 
+I do everything in my spare time for free, if you feel something aided you and you want to support me, you can always buy me a "koffie" as we say in dutch, no obligations whatsoever...
+
+<a href='https://ko-fi.com/Q5Q3BKI5S' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## Installing
 Download the latest release from the [releases tab](https://github.com/joyrider3774/attract_gamemanuals_plugin/releases), extract the files and copy the plugins folder to your attract folder.
 
@@ -88,6 +93,3 @@ Afterwards you may also convert your png files to jpg files and erase the pdf an
 
 #### Credits
 Plugin is heavily based on code from [SumatraPDF](http://forum.attractmode.org/index.php?topic=1927.0) plugin created by qqplayer
-
-#### Donations
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/joyrider3774)
