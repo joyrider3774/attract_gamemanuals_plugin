@@ -1,4 +1,6 @@
 # Game Manuals plugin for attract mode frontend
+![DownloadCountTotal](https://img.shields.io/github/downloads/joyrider3774/attract_gamemanuals_plugin/total?label=total%20downloads&style=plastic) ![DownloadCountLatest](https://img.shields.io/github/downloads/joyrider3774/attract_gamemanuals_plugin/latest/total?style=plastic) ![LatestVersion](https://img.shields.io/github/v/tag/joyrider3774/attract_gamemanuals_plugin?label=Latest%20version&style=plastic) ![License](https://img.shields.io/github/license/joyrider3774/attract_gamemanuals_plugin?style=plastic)
+
 A plugin for attractmode frontend for displaying game manuals, where each page is one image, or for displaying instruction or promo videos that should work on any layout used. It works on windows and linux, even on the raspberry pi
 
 ![Screenshot 1](/img/screenshot1.png) ![Screenshot 2](/img/screenshot2.png)
